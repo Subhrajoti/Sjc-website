@@ -66,3 +66,7 @@ function resetColor() {
     button1.style.boxShadow = ""
 
 }
+
+function scrollToTop() {
+    window.scrollTop(0);
+}
