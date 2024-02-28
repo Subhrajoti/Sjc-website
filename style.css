@@ -7,6 +7,11 @@ iframe {
     max-width: 100%;
 }
 
+nav {
+    z-index: 99999;
+
+}
+
 .footer_hr {
     border: 1px solid #5a7184;
     background-color: #5a7184;
@@ -31,14 +36,15 @@ iframe {
     width: 100vw;
     border-bottom: 2px solid white;
 
-    height: 12vh;
+    height: 100px;
     top: 0px;
-    padding: 5px;
+    padding: 15px 0px 5px 0px;
     background: linear-gradient(90deg, red, blue)
 }
 
 .puppy-image {
     width: 100%;
+    height: 30vh;
 }
 
 .like-icon {
