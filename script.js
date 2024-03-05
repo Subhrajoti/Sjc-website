@@ -70,3 +70,26 @@ function resetColor() {
 function scrollToTop() {
     window.scrollTop(0);
 }
+
+// testing :
+
+let header = document.getElementById("testHeader");
+let testImage = document.getElementById("testImage");
+
+header.addEventListener("click", function() {
+    testImage.style.marginTop = "78px";
+
+
+})
+let i = window.addEventListener("scroll", function() {
+    const scrollValue = window.scrollY;
+    return scrollValue
+    console.log(scrollValue)
+});
+
+
+if (i === 0) {
+
+    testImage.style.marginTop = "0px";
+
+}
