@@ -32,14 +32,17 @@ nav {
 
 .header {
     z-index: 99999;
-    box-shadow: 0px 10px 50px 0px blue;
+
+
+    box-shadow: 0px 10px 50px 5px blue;
     width: 100vw;
     border-bottom: 2px solid white;
+    display: block;
 
-    height: 78px;
     top: 0px;
+    height: 78px;
 
-    background: linear-gradient(90deg, red, blue)
+
 }
 
 .puppy-image {
@@ -108,7 +111,9 @@ nav {
 
 }
 
-footer {}
+footer {
+    z-index: 99999;
+}
 
 .main-heading {
     font-weight: bold;
