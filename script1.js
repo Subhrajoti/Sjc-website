@@ -4,6 +4,6 @@ let scrollValue = window.addEventListener("click", function(){
     return window.scrollY
 });
 if (scrollValue===0){
-    testImage.style.margin="";
+    testImage.style.marginTop="10px";
 };
 console.log(scrollValue);
