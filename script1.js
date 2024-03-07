@@ -1,4 +1,5 @@
-let testImage = document.geteElementByd("test_image");
+let testImage = document.getElementById("testImage");
+
 let scrollValue = window.addEventListener("click", function(){
     return window.scrollY
 });
