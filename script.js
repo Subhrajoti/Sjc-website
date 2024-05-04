@@ -1,25 +1,4 @@
 console.log("Hello Vistors");
-// small JavaScript Project:
-var img = document.getElementById("puppyImage");
-var button = document.getElementById("likeButton");
-var font = document.getElementById("likeIcon");
-let is_clicked = false;
-
-function onClickLikeButton() {
-    if (is_clicked === false) {
-        img.src = "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/white-puppy-liked-img.png";
-        button.style.color = "#ffffff";
-        button.style.background = "#0967d2";
-        font.style.color = "#0967d2";
-        is_clicked = true;
-    } else {
-        img.src = "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/white-puppy-img.png";
-        button.style.color = "#9aa5b1";
-        button.style.background = "#cbd2d9";
-        font.style.color = "#cbd2d9";
-        is_clicked = false;
-    }
-}
 
 // Guess Game:
 let guessedNum = document.getElementById("guessNum");
@@ -44,9 +23,7 @@ function checkNum() {
         document.getElementById("messagePara").style.fontWeight = "bold";
     } else {
 
-        document.getElementById("messagePara").innerText = "Give Some inputs!";
-        document.getElementById("messagePara").style.backgroundColor = "red";
-        document.getElementById("messagePara").style.fontWeight = "bold";
+        alert("Give Some inputs!");
     }
 }
 // test:
@@ -74,10 +51,97 @@ function scrollToTop() {
 // testing :
 
 let header = document.getElementById("testHeader");
+let testImage = document.getElementById("testImage");
 
 header.addEventListener("click", function() {
     testImage.style.marginTop = "78px";
 
 
 })
+let i = window.addEventListener("scroll", function() {
+    const scrollValue = window.scrollY;
+    return scrollValue
+    console.log(scrollValue)
+});
 
+
+if (i === 0) {
+
+    testImage.style.marginTop = "0px";
+
+}
+// todoProject:
+let todoList = [{
+        text: "Learn HTML",
+        uniqueNo: 1
+    },
+    {
+        text: "Learn CSS",
+        uniqueNo: 2
+    },
+    {
+        text: "Learn JavaScript",
+        uniqueNo: 3
+    }
+];
+let createAndAppendTodo = (todo) => {
+    let todoItemsContainer = document.getElementById("todoItemsContainer");
+    todoItemsContainer.style.listStyleType = "none";
+    let todoElement = document.createElement("li");
+    todoElement.classList.add("d-flex", "flex-row");
+    todoItemsContainer.appendChild(todoElement);
+    let inputElement = document.createElement("input");
+    inputElement.type = "checkbox";
+    let inputId = "inputId" + todo.uniqueNo;
+    inputElement.id = inputId;
+    todoElement.appendChild(inputElement);
+    let labelElement = document.createElement("label");
+    let labelContainer = document.createElement("div");
+    todoElement.appendChild(labelContainer);
+    labelContainer.classList.add("label-container", "p-2", "m-2", "d-flex", "flex-row");
+    labelElement.setAttribute("for", inputId);
+    labelElement.textContent = todo.text;
+    labelContainer.appendChild(labelElement);
+    let delIconContainer = document.createElement("div");
+    delIconContainer.classList.add("ml-auto");
+    labelContainer.appendChild(delIconContainer);
+    let delIcon = document.createElement("i");
+    delIcon.classList.add("fa", "fa-trash");
+    delIconContainer.appendChild(delIcon);
+    let oninput = () => {
+        labelElement.classList.toggle("line-through");
+    };
+    inputElement.onclick = () => {
+        oninput();
+    };
+    let onDel = () => {
+        todoItemsContainer.removeChild(todoElement);
+    };
+    delIcon.onclick = () => {
+        onDel();
+    };
+};
+for (let todos of todoList) {
+    createAndAppendTodo(todos);
+}
+let addButton = document.getElementById("addTodoButton");
+let userInput = document.getElementById("todoUserInput");
+
+let addTodo = () => {
+    let userInput = document.getElementById("todoUserInput");
+    let userText = userInput.value;
+    let count = todoList.length;
+    count = count + 1;
+    let todo = {
+        text: userText,
+        uniqueNo: count
+    };
+    if (userText === "") {
+        alert("Give proper Input");
+    } else {
+        createAndAppendTodo(todo);
+    }
+};
+addButton.onclick = () => {
+    addTodo();
+};
