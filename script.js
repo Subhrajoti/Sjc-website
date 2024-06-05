@@ -53,37 +53,40 @@ function scrollToTop() {
 let header = document.getElementById("testHeader");
 let testImage = document.getElementById("testImage");
 
-header.addEventListener("click", function() {
+header.onclick = () => {
     testImage.style.marginTop = "78px";
+};
 
 
-})
-let i = window.addEventListener("scroll", function() {
-    const scrollValue = window.scrollY;
-    return scrollValue
-    console.log(scrollValue)
-});
-
-
-if (i === 0) {
+if (window.scrollY === 0) {
 
     testImage.style.marginTop = "0px";
 
 }
 // todoProject:
-let todoList = [{
-        text: "Learn HTML",
-        uniqueNo: 1
-    },
-    {
-        text: "Learn CSS",
-        uniqueNo: 2
-    },
-    {
-        text: "Learn JavaScript",
-        uniqueNo: 3
-    }
-];
+let saveBtn = document.getElementById("saveTodoButton");
+
+let settingData = () => {
+    let data = [{
+            text: "Learn HTML",
+            uniqueNo: 0
+        },
+        {
+            text: "Learn CSS",
+            uniqueNo: 1
+        },
+        {
+            text: "Learn JavaScript",
+            uniqueNo: 2
+        }
+    ];
+    localStorage.setItem("todoList", JSON.stringify(data));
+};
+let test = localStorage.getItem("todoList");
+if (test === null) {
+    settingData();
+}
+let todoList = JSON.parse(localStorage.getItem("todoList"));
 let createAndAppendTodo = (todo) => {
     let todoItemsContainer = document.getElementById("todoItemsContainer");
     todoItemsContainer.style.listStyleType = "none";
@@ -106,6 +109,7 @@ let createAndAppendTodo = (todo) => {
     delIconContainer.classList.add("ml-auto");
     labelContainer.appendChild(delIconContainer);
     let delIcon = document.createElement("i");
+    delIcon.id = "delId" + todo.uniqueNo;
     delIcon.classList.add("fa", "fa-trash");
     delIconContainer.appendChild(delIcon);
     let oninput = () => {
@@ -115,14 +119,24 @@ let createAndAppendTodo = (todo) => {
         oninput();
     };
     let onDel = () => {
+        var word = delIcon.id;
+        let ind = word.slice(-1);
+        let index = parseInt(ind);
+        todoList.splice(index, 1);
+        console.log(todoList);
         todoItemsContainer.removeChild(todoElement);
+        saveBtn.onclick = () => {
+            localStorage.setItem("todoList", JSON.stringify(todoList));
+        };
     };
+
     delIcon.onclick = () => {
         onDel();
     };
 };
-for (let todos of todoList) {
-    createAndAppendTodo(todos);
+for (let i in todoList) {
+    console.log(i);
+    createAndAppendTodo(todoList[i]);
 }
 let addButton = document.getElementById("addTodoButton");
 let userInput = document.getElementById("todoUserInput");
@@ -136,11 +150,16 @@ let addTodo = () => {
         text: userText,
         uniqueNo: count
     };
+    todoList.push(todo);
+    saveBtn.onclick = () => {
+        localStorage.setItem("todoList", JSON.stringify(todoList));
+    };
     if (userText === "") {
         alert("Give proper Input");
     } else {
         createAndAppendTodo(todo);
-    }
+    };
+    userInput.value = "";
 };
 addButton.onclick = () => {
     addTodo();
