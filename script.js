@@ -33,14 +33,14 @@ function changeColor() {
     button1.style.textDecoration = "underline";
     button1.style.width = "170px";
     button1.style.margin = "0px 5px 0px 0px";
-    button1.style.boxShadow = "1px 2px 10px 5px white"
+    button1.style.boxShadow = "1px 2px 10px 5px white";
 }
 
 function resetColor() {
     button1.style.textDecoration = "";
     button1.style.width = "";
     button1.style.margin = "";
-    button1.style.boxShadow = ""
+    button1.style.boxShadow = "";
 
 }
 
@@ -58,11 +58,11 @@ header.onclick = () => {
 };
 
 
-if (window.scrollY === 0) {
+window.onscroll = function(){if (window.scrollY === 0) {
 
     testImage.style.marginTop = "0px";
 
-}
+}}
 // todoProject:
 let saveBtn = document.getElementById("saveTodoButton");
 
@@ -158,7 +158,7 @@ let addTodo = () => {
         alert("Give proper Input");
     } else {
         createAndAppendTodo(todo);
-    };
+    }
     userInput.value = "";
 };
 addButton.onclick = () => {
