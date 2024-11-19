@@ -1,10 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
 
+* {
+    font-family: "Roboto";
+}
+
 body,
 header,
 body,
 iframe {
     max-width: 100%;
+}
+
+.li {
+    background: radial-gradient(white, lightgreen);
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    max-height: 100px;
+    max-width: 200px;
+    padding: 15px 20px 15px 2px;
+    border-radius: 15px;
+    color: green;
+    margin: 15px;
 }
 
 .todos-bg-container {
@@ -102,11 +120,7 @@ iframe {
     margin-top: 12px;
     margin-right: 12px;
 }
-.a_btn>hover{
-    padding:25px;
-    box-shadow:1px 0px 5px 50px blue;
-    transition:ease-out .5;
-}
+
 .checkbox-label {
     font-family: "Roboto";
     font-size: 16px;
@@ -254,13 +268,11 @@ footer {
 
     background: linear-gradient(90deg, red, blue)
 }
-
 .bg-clr {
 
     background-color: #faf0fc;
     height: 100vh;
 }
-
 .mg {
     margin: 5px 0px;
 
