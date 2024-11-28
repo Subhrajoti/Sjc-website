@@ -1,7 +1,7 @@
 console.log("Hello Vistors");
-let test = prompt("what is your name: ");
-let t = test.length;
-alert(`Hello ${test[0].toUpperCase()}${test.slice(1,t).toLowerCase()}`);
+let greet = prompt("what is your name: ");
+let t = greet.length;
+alert(`Hello ${greet[0].toUpperCase()}${greet.slice(1,t).toLowerCase()}`);
 // Guess Game:
 let guessedNum = document.getElementById("guessNum");
 let randomNumber = Math.ceil(Math.random() * 100);
