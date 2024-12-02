@@ -1,4 +1,4 @@
-console.log("Hello Vistors");
+alert("Hello Vistors");
 let roter = document.getElementById("roter");
 let roter_arr = ["S_", "SJ_", "SJC"];
 let roter_count = 0;
