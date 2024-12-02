@@ -4,6 +4,25 @@
     font-family: "Roboto";
 }
 
+.div-roter {
+    box-shadow: 0px 0px 50px 5px red inset;
+}
+
+#roter {
+    height: 50px;
+    padding: 0px 5px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 0 0 5px white;
+    transition: ease-out 0.5s;
+    background: inherit;
+}
+
 body,
 header,
 body,
@@ -268,11 +287,25 @@ footer {
 
     background: linear-gradient(90deg, red, blue)
 }
+
+
+
+
+
 .bg-clr {
 
     background-color: #faf0fc;
     height: 100vh;
 }
+
+
+
+
+
+
+
+
+
 .mg {
     margin: 5px 0px;
 
