@@ -1,12 +1,13 @@
-alert("Hello Vistors");
+console.log("Hello Vistors");
+alert("Hello Visitors");
 let roter = document.getElementById("roter");
-let roter_arr = ["S_", "SJ_", "SJC"];
+let roter_arr = ["<>", "S_", "SJ_", "SJC", "Subhrajoti", "Chakrabarty", "SJC", "</>"];
 let roter_count = 0;
 let t_roter = setInterval(function() {
     roter.textContent = roter_arr[roter_count];
     roter_count++;
-    if (roter_count === 3) {
-        roter_count = 0
+    if (roter_count === roter_arr.length) {
+        roter_count = 0;
     }
 }, 600);
 // Guess Game:
