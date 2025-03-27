@@ -55,7 +55,7 @@ function resetColor() {
 }
 
 function scrollToTop() {
-    window.scrollTop(0);
+   window.scrollTo(0, 0);
 }
 
 // testing :
