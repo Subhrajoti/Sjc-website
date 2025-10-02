@@ -6,6 +6,7 @@
 
 .div-roter {
     box-shadow: 0px 0px 50px 5px red inset;
+    transition: ease-in-out;
 }
 @media (orientation:portrait) {
     .d-test {
@@ -332,3 +333,4 @@ footer {
     border-color: white;
 
 }
+
