@@ -9,7 +9,7 @@ let t_roter = setInterval(function() {
     if (roter_count === roter_arr.length) {
         roter_count = 0;
     }
-}, 600);
+}, 700);
 // Guess Game:
 let guessedNum = document.getElementById("guessNum");
 let randomNumber = Math.ceil(Math.random() * 100);
@@ -177,4 +177,5 @@ let addTodo = () => {
 addButton.onclick = () => {
     addTodo();
 };
+
 
